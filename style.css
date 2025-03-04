@@ -89,25 +89,27 @@ body::before {
     }
 }
 
-/* 標題樣式 */
-.gallery-title {
-    text-align: center;
-    color: #fff;
-    font-size: 3rem;
-    margin-top: 5px; /* 修正單位 */
-    text-shadow: 0 0 5px #fff, 0 0 10px #fff;
-    transition: 0.4s ease;
+.logo-container {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px; /* 調整與上方距離 */
 }
 
-.gallery-title:hover {
-    text-shadow: 0 0 15px #fff, 0 0 25px #fff, 0 0 35px #fff, 0 0 45px #fff;
-    transform: scale(1.2);
+.logo-container img {
+    width: 700px; /* 設定 Logo 大小，可根據需求調整 */
+    transition: transform 0.3s ease-in-out;
+}
+
+.logo-container img:hover {
+    transform: scale(1.1); /* 懸停時放大 */
 }
 
 /* 副標題樣式 */
 .gallery-subtitle {
     text-align: center;
     color: rgba(255,255,255,0.7);
-    font-size: 1.3rem;
-    margin-top: 1px;
+    font-size: 1.5rem;
+    margin-top: 35px;
 }
