@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+body{
 
-body {
     background-color: #000;
     font-family: 'Orbitron', sans-serif;
     font-weight: 900;
@@ -8,9 +8,8 @@ body {
     position: relative;
     overflow: hidden;
 }
+body::before{
 
-/* 背景裝飾 (星空或漸層) */
-body::before {
     content: "";
     position: fixed;
     top: 0;
@@ -21,9 +20,8 @@ body::before {
     background: radial-gradient(circle at center, rgba(255,255,255,0.2), transparent 70%);
     z-index: -1;
 }
+.container{
 
-/* 主要內容區塊 */
-.container {
     margin: 100px 0 0 200px;
     width: 75%;
     height: 450px;
@@ -32,10 +30,9 @@ body::before {
     gap: 25px;
     animation: fadeIn 1s ease-in-out forwards;
 }
+.container a{
 
-/* 確保 <a> 內部的 <img> 可以正常顯示 */
-.container a {
-    flex: 1; /* 讓每個 a 標籤的圖片都能平均分配空間 */
+    flex: 1;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -43,9 +40,8 @@ body::before {
     text-decoration: none;
     transition: flex-grow 0.5s ease-in-out;
 }
+.container a img{
 
-/* 圖片樣式 */
-.container a img {
     width: 95%;
     height: 103%;
     object-fit: cover;
@@ -53,61 +49,58 @@ body::before {
     border: 2px solid rgba(255, 255, 255, 0.6);
     transition: all 0.5s ease-in-out;
 }
+.container a:hover{
 
-.container a:hover {
-
-    flex-grow: 1.45; /* 當滑鼠懸停時，該圖片所在的區塊會變大 */
+    flex-grow: 1.45;
 }
-.container a:not(:hover) {
+.container a:not(:hover){
 
-    flex-grow: 0.9; /* 其他圖片的區塊會變小 */
+    flex-grow: 0.9;
 }
+.container a:hover img{
 
-/* 懸停時 (hover) 效果 */
-.container a:hover img {
     width: 140%;
     filter: drop-shadow(0 0 10px #fff) drop-shadow(0 0 25px #fff);
     border: 2px solid #fff;
     cursor: pointer;
 }
+.container a:active img{
 
-/* 點擊時 (active) 按壓感 */
-.container a:active img {
     transform: scale(0.9) translateY(2px);
     box-shadow: 0 0 20px rgba(255, 255, 255, 0.8);
 }
+@keyframes fadeIn{
 
-/* 淡入動畫 */
-@keyframes fadeIn {
-    0% {
+    0%{
+
         opacity: 0;
         transform: translateY(20px);
     }
-    100% {
+    100%{
+
         opacity: 1;
         transform: translateY(0);
     }
 }
+.logo-container{
 
-.logo-container {
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 30px; /* 調整與上方距離 */
+    margin-top: 30px;
 }
+.logo-container img{
 
-.logo-container img {
-    width: 700px; /* 設定 Logo 大小，可根據需求調整 */
+    width: 700px;
     transition: transform 0.3s ease-in-out;
 }
+.logo-container img:hover{
 
-.logo-container img:hover {
-    transform: scale(1.1); /* 懸停時放大 */
+    transform: scale(1.1);
 }
+.gallery-subtitle{
 
-/* 副標題樣式 */
-.gallery-subtitle {
     text-align: center;
     color: rgba(255,255,255,0.7);
     font-size: 1.5rem;
